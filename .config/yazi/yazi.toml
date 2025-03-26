@@ -1,0 +1,27 @@
+# yazi.toml
+[manager]
+# show_hidden = true
+show_hidden = false
+ratio = [2, 4, 3]   # default [1, 4, 3]
+
+[filetype]
+rules = [
+  # Images
+  { mime = "image/*", fg = "yellow" },
+
+  # Videos
+  { mime = "video/*", fg = "magenta" },
+  { mime = "audio/*", fg = "magenta" },
+
+  # Empty files
+  { mime = "inode/empty", fg = "cyan" },
+
+  # Orphan symbolic links
+  { name = "*", is = "orphan", fg = "red" },
+
+  # ...
+
+  # Fallback
+  # { name = "*", fg = "white" },
+  { name = "*/", fg = "blue" },
+]
